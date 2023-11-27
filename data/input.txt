@@ -1,4 +1,4 @@
-this is a program that takes a series of words as input
-then it creates a dictionary from those words
-then it translates it and outputs it in the output file
-it looks weird because it is written with the international phonetic alphabet
+reality is a social construction
+we drown ourselves in golden blood
+the world of old men is dying
+a new dawn of mercury is born
