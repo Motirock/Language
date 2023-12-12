@@ -11,21 +11,20 @@ import java.util.Hashtable;
 import java.util.Random;
 
 public class Language {
-    String name = "NO_NAME";
-    ArrayList<String> allWordIDs = new ArrayList<String>();
-    Dictionary<String, Word> dictionary = new Hashtable<>();
-    ArrayList<Syllable> allSyllables = new ArrayList<Syllable>();
-    ArrayList<String> vowels = Utils.vowels, consonants = Utils.consonants;
-    int maxWordLengthSyllables = 1;
-    int totalSyllables = 1;
-    double consonantStartsSyllable = 0.5, consonantEndsSyllable = 0.5;
+    public String name = "NO_NAME";
+    public ArrayList<String> allWordIDs = new ArrayList<String>();
+    public Dictionary<String, Word> dictionary = new Hashtable<>();
+    public ArrayList<Syllable> allSyllables = new ArrayList<Syllable>();
+    public ArrayList<String> vowels = Utils.vowels, consonants = Utils.consonants;
+    public int maxWordLengthSyllables = 1;
+    public int totalSyllables = 1;
+    public double consonantStartsSyllable = 0.5, consonantEndsSyllable = 0.5;
 
     public Language(String name, long seed, int maxWordLengthSyllables, int totalSyllables, double consonantStartsSyllable, double consonantEndsSyllable) {
         this.name = name;
         this.seed = seed;
         this.maxWordLengthSyllables = maxWordLengthSyllables;
         this.totalSyllables = totalSyllables;
-        
     }
 
     public Language(String name, long seed, int maxWordLengthSyllables, int totalSyllables, 
@@ -64,9 +63,9 @@ public class Language {
     }
 
     public void printSentence(ArrayList<String> words) {
-        for (String word : words)
-            System.out.print(word + " ");
-        System.out.print("= ");
+        //for (String word : words)
+        //    System.out.print(word + " ");
+        //System.out.print("= ");
         System.out.println(getSentence(words));
     }
 

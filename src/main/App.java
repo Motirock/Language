@@ -11,7 +11,7 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) throws Exception {
         String[] italianoVowelsArray = {"i", "u", "e", "o", "ɛ", "ɔ", "a"};
-        String[] italianoConsonantsArray = {"m", "n", "p", "b", "t", "d", "k", "g", "f", "v", "s", "z", "ʃ", "ʒ", "j", "w", "l", "r"};
+        String[] italianoConsonantsArray = {"m", "n", "p", "b", "t", "d", "k", "g", "f", "v", "s", "z", "ʃ", "ʒ", "j", "w", "l", "r", "λ"};
         ArrayList<String> italianoVowels = new ArrayList<String>(Arrays.asList(italianoVowelsArray));
         ArrayList<String> italianoConsonants = new ArrayList<String>(Arrays.asList(italianoConsonantsArray));
         Language italiano = new Language("Pizza language", 7, 3, 50, italianoVowels, italianoConsonants, 0.9, 0.2);
@@ -54,7 +54,14 @@ public class App {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        hawaiian.printSentence(words);
+        for (int i = 0; i < 10; i++) {
+            for (String wordID : hawaiian.allWordIDs) {
+                hawaiian.dictionary.get(wordID).mutate(hawaiian);
+            }
+        }
+        for (String wordID : hawaiian.allWordIDs)
+            if (Math.random() < 0.001)
+            System.out.println(wordID+": "+hawaiian.dictionary.get(wordID).getEtymology());
         Language.saveSentence(fullSentence);
     }
 }
